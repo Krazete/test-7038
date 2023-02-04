@@ -20,5 +20,12 @@ baseurl: "/test-7038"
 url: "https://krazete.github.io"
 github_username: krazete
 
+# defaults:
+#   - scope:
+#       type: categories  # select all category pages
+#     values:
+#       layout: default
+#       permalink: categories/:index/
+
 exclude:
   - README.md
