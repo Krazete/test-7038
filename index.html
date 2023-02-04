@@ -1,0 +1,12 @@
+---
+layout: default
+title: sdsd
+email: krazete.com
+---
+s
+{% for i in (1..5) %}
+    {{ i }}
+{% endfor %}
+{% for item in site.data.alpha %}
+<div>{{ item.index }}: {{ item.title }}</div>
+{% endfor %}
