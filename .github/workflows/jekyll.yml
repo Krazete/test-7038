@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   # enables "Run Workflow" in Actions tab
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -18,7 +18,6 @@ jobs:
         key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
         restore-keys: |
           ${{ runner.os }}-gems-
-  deploy:
     - name: Jekyll Actions
       uses: helaili/jekyll-action@2.5.0
 #       with:
