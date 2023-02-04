@@ -1,23 +1,15 @@
 module MainPlugin
     class PageGenerator < Jekyll::Generator
         def generate(site)
-            # data = site.data['alpha']
-            # data.each do |datum|
-            #     reading = site.pages.find { |page| page.name == 'default.html'}
-            #     reading.data['title'] = 'title'
-            #     reading.data['email'] = 'kra'
-            #     site.pages << AlphaPage.new(site, datum)
-            # end
-            puts 'WOOHOO'
-            puts 'WOOHOO'
-            puts 'WOOHOO'
-            puts 'WOOHOO'
-            site.pages << AlphaPage.new(site)
+            data = site.data['alpha']
+            data.each do |datum|
+                site.pages << AlphaPage.new(site, datum)
+            end
         end
     end
     
     class AlphaPage < Jekyll::Page
-        def initialize(site)
+        def initialize(site, datum)
             # @site = site
             # @base = site.source
             # @dir  = category
@@ -40,14 +32,14 @@ module MainPlugin
             # Directory the page will reside in.
             @dir = 'posts'
             # All pages have the same filename.
-            @basename = 'index2'
+            @basename = datum['title'] + datum['index'].to_s
             @ext = '.html'
-            @name = 'index2.html'
+            @name = @basename + @ext
             # Define any custom data you want.
             @data = {
                 'layout' => 'default',
-                'title' => 'page',
-                'email' => 'data'
+                'title' => datum['index'],
+                'email' => datum['title']
             }
         end
     end

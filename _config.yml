@@ -20,6 +20,9 @@ baseurl: "/test-7038"
 url: "https://krazete.github.io"
 github_username: krazete
 
+plugins:
+  - jekyll-sitemap
+
 # defaults:
 #   - scope:
 #       type: categories  # select all category pages
