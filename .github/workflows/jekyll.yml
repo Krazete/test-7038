@@ -20,5 +20,5 @@ jobs:
           ${{ runner.os }}-gems-
     - name: Jekyll Actions
       uses: helaili/jekyll-action@2.5.0
-#       with:
-#         token: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
